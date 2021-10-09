@@ -6,24 +6,55 @@ var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 var upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 var special = ['!', '@', '#', '$', '%', '^', '&', '*', '+', '?'];
+var allCombos = [];
 
 // Initiate prompts to determine password criteria. 
-function parameters () {
-  var length = prompt("Choose a password length between 8 & 128");
-  if((length < 8) || (length > 128))
-    alert("Password mus be between 8 and 128 characters!");
-  else if((!numbers)&&(!lowerCase)&&(!upperCase)&&(!special))
-    alert("Must choose at least one type.");
-}
+function generatePassword () {  
+  var length = prompt("Choose a password length between 8 & 128"); 
+    while ((length < 8) || (length > 128)) {
+      alert("Password mus be between 8 and 128 characters!");
+     length = prompt("Choose a password length between 8 & 128"); 
+    }
+  var userNumbers = confirm("Would you like to include numbers in you password?");
+    while (userNumbers = false) {
+    }
+    
+    
+  var useLowerCase = confirm("Would you like to include lower case letters in your password");
+  var useUpperCase = confirm ("Would you like to include upper case letters in your password?");
+  var useSpecial = confirm ("Would you like to include special characters in your password");
+
+  
+  // declare password varibale to hold char for user password
+  var passsword = [];
+  // track number of choices
+  var numOfChoices = 0;
+  // check for each
+  
+
+  // case 1: numbers
+  if(useNumbers)  {
+      allCombos = allCombos.concat(numbers)
+      password.push(numbers[Math.floor(Math.random()*numbers.length)])
+      numOfChoices++
 
 
-  var numbers = prompt("Would you like to include numbers in you password?");
-  var lowerCase = prompt("Would you like to include lower case letters in your password");
-  var upperCase = prompt ("Would you like to include upper case letters in your password?");
-  var special = prompt ("Would you like to include special characters in your password");
-  var input = {length: length, numbers: numbers, lowerCase: lowerCase, upperCase: upperCase, special: special
   }
 
+  // case 2
+
+
+  // case 3
+
+  // case4
+
+
+  // loop through the remanining number of characters for the password araray; 
+
+
+  return password; // might use join
+  
+}
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -36,5 +67,3 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-
-parameters();
