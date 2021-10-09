@@ -16,17 +16,19 @@ function generatePassword () {
      length = prompt("Choose a password length between 8 & 128"); 
     }
   var userNumbers = confirm("Would you like to include numbers in you password?");
-    while (userNumbers = false) {
-    }
-    
-    
-  var useLowerCase = confirm("Would you like to include lower case letters in your password");
-  var useUpperCase = confirm ("Would you like to include upper case letters in your password?");
-  var useSpecial = confirm ("Would you like to include special characters in your password");
+  var userLowerCase = confirm("Would you like to include lower case letters in your password");
+  var userUpperCase = confirm ("Would you like to include upper case letters in your password?");
+  var userSpecial = confirm ("Would you like to include special characters in your password");
+   while (userNumbers, userLowerCase, userUpperCase, userSpecial === false) {
+     alert("You must choose at least one!");
+     userNumbers = confirm("Would you like to include numbers in you password?");
+     userLowerCase = confirm("Would you like to include lower case letters in your password");
+     userUpperCase = confirm ("Would you like to include upper case letters in your password?");
+    userSpecial = confirm ("Would you like to include special characters in your password");
+   }
 
-  
   // declare password varibale to hold char for user password
-  var passsword = [];
+  var userNumbers = [];
   // track number of choices
   var numOfChoices = 0;
   // check for each
